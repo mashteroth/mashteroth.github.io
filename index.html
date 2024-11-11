@@ -2,16 +2,23 @@
 <html>
 <head>
     <title>Spotify Widget</title>
+    <!-- Add CSP meta tag to allow necessary resources -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self' npmcdn.com;
+                   script-src 'self' 'unsafe-inline' npmcdn.com;
+                   style-src 'self' 'unsafe-inline';">
 </head>
 <body>
     <!-- Create a container -->
     <div id="spotify-widget"></div>
 
     <!-- Add the script before the closing body tag -->
-    <script src="https://npmcdn.com/spotifyCurrentlyPlaying.js/dist/spotifyCurrentlyPlaying.min.js"></script>
+    <script src="https://npmcdn.com/spotifyCurrentlyPlaying.js/dist/spotifyCurrentlyPlaying.min.js" 
+            integrity="sha384-" 
+            crossorigin="anonymous"></script>
 
     <!-- Call the SCP() function -->
-    <script>
+    <script nonce="random-nonce">
         SCP({
             selector: '#spotify-widget',
             username: 'mashteroth',
