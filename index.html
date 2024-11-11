@@ -8,19 +8,50 @@
             padding: 0; 
             background: transparent;
         }
+        #spotify-widget {
+            min-height: 370px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        #debug-info {
+            color: #666;
+            font-family: Arial, sans-serif;
+        }
     </style>
 </head>
 <body>
+    <div id="debug-info">Widget should appear below:</div>
     <div id="spotify-widget"></div>
     <script src="https://npmcdn.com/spotifyCurrentlyPlaying.js/dist/spotifyCurrentlyPlaying.min.js"></script>
     <script>
-        SCP({
-            selector: '#spotify-widget',
-            username: 'mashteroth@gmail.com',  // Replace with your Last.fm username
-            api_key: 'e3f5ddd433c057fbd09fef545bef3014',   // Replace with your Last.fm API key
-            width: '100%',
-            height: '370'
-        });
+        try {
+            if (typeof SCP === 'undefined') {
+                document.getElementById('debug-info').innerHTML += '<br>Error: SCP function not loaded';
+            } else {
+                document.getElementById('debug-info').innerHTML += '<br>SCP function loaded successfully';
+                SCP({
+                    selector: '#spotify-widget',
+                    username: 'mashteroth',  // Make sure to replace this
+                    api_key: '38fc92bd75e3f57955fa91605dbf34d3',   // Make sure to replace this
+                    width: '100%',
+                    height: '370'
+                });
+                document.getElementById('debug-info').innerHTML += '<br>SCP function called';
+            }
+        } catch (error) {
+            document.getElementById('debug-info').innerHTML += '<br>Error: ' + error.message;
+        }
+    </script>
+    <script>
+        // Check if the widget div is empty after a short delay
+        setTimeout(() => {
+            const widget = document.getElementById('spotify-widget');
+            if (widget.children.length === 0) {
+                document.getElementById('debug-info').innerHTML += '<br>Widget div is empty after initialization';
+            } else {
+                document.getElementById('debug-info').innerHTML += '<br>Widget content found';
+            }
+        }, 2000);
     </script>
 </body>
 </html>
