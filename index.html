@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>My Spotify Profile</title>
+    <!-- Add CSP meta tag to allow Spotify embed -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   frame-src https://open.spotify.com/;
+                   style-src 'self' 'unsafe-inline';">
     <style>
         body { 
             margin: 0; 
@@ -17,14 +22,12 @@
 <body>
     <div class="spotify-wrapper">
         <iframe 
-            style="border-radius:12px" 
-            src="https://open.spotify.com/embed/user/caroach82" 
+            title="Spotify Profile"
+            src="https://open.spotify.com/embed/user/caroach82"
             width="100%" 
             height="380" 
-            frameBorder="0" 
-            allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
+            style="border-radius:12px; border:none;"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
         </iframe>
     </div>
 </body>
