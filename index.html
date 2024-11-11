@@ -2,16 +2,25 @@
 <html>
 <head>
     <title>Spotify Widget</title>
+    <style>
+        /* Adding some basic styling to see the container */
+        #spotify-widget {
+            border: 1px solid #ccc;
+            min-height: 370px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Create the container -->
     <div id="spotify-widget"></div>
 
-    <!-- Add the official script from npm -->
-    <script src="https://unpkg.com/spotifycurrentlyplaying.js/dist/spotifyCurrentlyPlaying.min.js"></script>
+    <!-- Using the correct package name from npm -->
+    <script src="https://unpkg.com/spotify-currently-playing/dist/spotify-currently-playing.min.js"></script>
     
     <!-- Initialize the widget -->
     <script>
+        console.log('Script loaded, attempting to initialize widget...');
         SCP({
             selector: '#spotify-widget',
             username: 'mashteroth',
@@ -19,6 +28,7 @@
             width: '100%',
             height: '370'
         });
+        console.log('Widget initialization complete');
     </script>
 </body>
 </html>
