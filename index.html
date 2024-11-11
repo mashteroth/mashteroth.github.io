@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spotify Widget</title>
+    <title>My Spotify Profile</title>
     <style>
-        /* Adding some basic styling to see the container */
-        #spotify-widget {
-            border: 1px solid #ccc;
-            min-height: 370px;
-            padding: 10px;
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: transparent;
+        }
+        .spotify-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <!-- Create the container -->
-    <div id="spotify-widget"></div>
-
-    <!-- Using the correct package name from npm -->
-    <script src="https://unpkg.com/spotify-currently-playing/dist/spotify-currently-playing.min.js"></script>
-    
-    <!-- Initialize the widget -->
-    <script>
-        console.log('Script loaded, attempting to initialize widget...');
-        SCP({
-            selector: '#spotify-widget',
-            username: 'mashteroth',
-            api_key: 'e3f5ddd43c057fbd09fef545bef3014',
-            width: '100%',
-            height: '370'
-        });
-        console.log('Widget initialization complete');
-    </script>
+    <div class="spotify-wrapper">
+        <iframe 
+            style="border-radius:12px" 
+            src="https://open.spotify.com/embed/user/caroach82" 
+            width="100%" 
+            height="380" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
 </body>
 </html>
