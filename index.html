@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotify Widget</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="spotify-widget"></div>
+    <script src="https://npmcdn.com/spotifyCurrentlyPlaying.js/dist/spotifyCurrentlyPlaying.min.js"></script>
+    <script>
+        SCP({
+            selector: '#spotify-widget',
+            username: 'mashteroth',  // Replace with your Last.fm username
+            api_key: 'e3f5ddd433c057fbd09fef545bef3014',   // Replace with your Last.fm API key
+            width: '100%',
+            height: '370'
+        });
+    </script>
+</body>
+</html>
